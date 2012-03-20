@@ -18,7 +18,7 @@ optparse = OptionParser.new do |opts|
 		options[:directory] = directory
 	end
 
-	options[:port] = 5000 + options[:dir].hash % 1000
+	options[:port] = 5000 + options[:directory].hash % 1000
 	opts.on "-p", "--port PORT", Integer, "Specify port to use" do |port|
 		options[:port] = port
 	end
