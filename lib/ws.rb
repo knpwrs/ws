@@ -10,9 +10,11 @@ module WS
 			mime_type = get_mime_type file_path
 			begin
 				file_handle = File.open(file_path, "r")
+				puts "#{Time.now.inspect}: Sending #{file_path} to client." if options[:verbose]
 				conn.print get_header("200/OK", mime_type)
 				conn.print file_handle.read()
 			rescue Errno::ENOENT
+				puts "#{Time.now.inspect}: Not Found: #{file_path}" if options[:verbose]
 				conn.print get_header("404/NOT FOUND", "text/html")
 				conn.print "404: File not found."
 			end
