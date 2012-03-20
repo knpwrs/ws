@@ -5,6 +5,10 @@ ws(3) -- Simple Local Web Server
     :::text
     ws \[-v | --verbose\] \[-d | --directory DIRECTORY\] \[-p | --port PORT\] \[-h | --help\]
 
+## INSTALLTION
+
+To install, make sure you have the latest version of Ruby and RubyGems installed (tested and working on Ruby 1.9.3, RubyGems 1.8.19) and execute `gem install ws`.
+
 ## DESCRIPTION
 
 `ws` is a simple script which launches a server for testing of static websites.
