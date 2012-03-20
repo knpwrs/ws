@@ -40,3 +40,15 @@ unless File.file? dest_path
 	require "fileutils"
 	FileUtils.cp source_path, dest_path
 end
+require dest_path
+
+# Trap Interrupts
+trap("INT") do
+	puts "Shutting down..."
+	exit
+end
+
+# Start server
+puts "Starting server at http://127.0.0.1:#{options[:port]}"
+WS::start_server options
+puts "Server started! Press ctrl-c to quit."
