@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require File.join(File.dirname(__FILE__),"../lib", "ws.rb")
+bin_dir = File.dirname(__FILE__)
+require File.join(bin_dir, "..", "lib", "ws.rb")
 require "optparse"
 
 # Set up OptionParser
@@ -33,8 +34,8 @@ optparse.parse!
 
 # Place mime type file in home directory if necessary
 file_name = ".wsmimetypes.rb"
-dest_path = File.expand_path("~/" << file_name)
-source_path = File.join(File.dirname(__FILE__), file_name)
+dest_path = File.expand_path(File.join("~", file_name))
+source_path = File.join(bin_dir, file_name)
 unless File.file? dest_path
 	require "fileutils"
 	FileUtils.cp source_path, dest_path
