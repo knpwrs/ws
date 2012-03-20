@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+require "../lib/ws.rb"
+require "optparse"
+
+# Set up OptionParser
+options = {}
+optparse = OptionParser.new do |opts|
+	opts.banner = "Usage: ws [options]"
+
+	options[:verbose] = false
+	opts.on "-v", "--verbose", "Output more information" do
+		options[:verbose] = true
+	end
+
+	options[:directory] = Dir::pwd
+	opts.on "-d", "--directory DIRECTORY", "Specify directory to use" do |directory|
+		options[:directory] = directory
+	end
+
+	options[:port] = 5000 + options[:dir].hash % 1000
+	opts.on "-p", "--port PORT", Integer, "Specify port to use" do |port|
+		options[:port] = port
+	end
+
+	opts.on "-h", "--help", "Display this help secreen" do
+		puts opts
+		exit
+	end
+end
+
+# Parse options
+optparse.parse!
+
+# Place mime type file in home directory if necessary
+unless File.file?(File.expand_path "~/.wsmimetypes.rb")
+	require "fileutils"
+	FileUtils.cp "./.wsmimetypes.rb", File.expand_path("~/.wsmimetypes.rb")
+end
