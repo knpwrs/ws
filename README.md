@@ -39,7 +39,7 @@ To install, make sure you have the latest version of Ruby and RubyGems installed
 
 When this script first executes it creates a file in your home directory called `.wsmimetypes.rb`. You can edit this file to change the mime types that are sent to the client on requests. If you need to reset the file back to its original state simply delete it -- the script will recreate it on the next run if it doesn't exist.
 
-## Author
+## AUTHOR
 
 Kenneth Powers [`mail@kenpowers.net`](mailto:mail@kenpowers.net)  
 [http://bitbucket.org/KenPowers](http://bitbucket.org/KenPowers)
