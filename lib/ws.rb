@@ -13,6 +13,7 @@ module WS
 				puts "#{Time.now.inspect}: Sending #{file_path} to client." if options[:verbose]
 				conn.print get_header("200/OK", mime_type)
 				conn.print file_handle.read()
+				file_handle.close
 			rescue Errno::ENOENT
 				puts "#{Time.now.inspect}: Not Found: #{file_path}" if options[:verbose]
 				conn.print get_header("404/NOT FOUND", "text/html")
