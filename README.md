@@ -3,7 +3,7 @@ ws(3) -- Simple Local Web Server
 
 ## SYNOPSIS
     :::text
-    ws \[-v | --verbose\] \[-d | --directory DIRECTORY\] \[-p | --port PORT\] \[-h | --help\]
+    ws [-v | --verbose] [-d | --directory DIRECTORY] [-p | --port PORT] [-h | --help]
 
 ## INSTALLTION
 
