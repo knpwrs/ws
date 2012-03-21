@@ -6,7 +6,7 @@ module WS
 		while (conn = server.accept)
 			file = conn.gets.scan(/(?<=\/).*(?=\sHTTP)/)[0].split("/")
 			file_path = File.join(options[:directory], file)
-			file_path = File.join(file_path, "index.html") if File.directory? file_path
+			file_path = File.join(file_path, options[:index]) if File.directory? file_path
 			mime_type = get_mime_type file_path
 			begin
 				file_handle = File.open(file_path, "r")

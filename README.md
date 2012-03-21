@@ -30,6 +30,11 @@ To install, make sure you have the latest version of Ruby and RubyGems installed
     :::text
     ws -d ~ -p 1337 -v
 
+### Launch a server and use `default.htm` as the default file to serve.
+
+    :::text
+    ws -i default.htm
+
 ### Show help
 
     :::text

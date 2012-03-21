@@ -18,6 +18,11 @@ optparse = OptionParser.new do |opts|
 		options[:directory] = directory
 	end
 
+	options[:index] = "index.html"
+	opts.on "-i", "--index-file FILENAME", "Specify the file name to use for index files." do |file|
+		options[:index] = file
+	end
+
 	options[:port] = 5000 + options[:directory].hash % 1000
 	opts.on "-p", "--port PORT", Integer, "Specify port to use" do |port|
 		options[:port] = port
