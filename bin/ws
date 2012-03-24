@@ -49,7 +49,7 @@ require dest_path
 
 # Trap Interrupts
 trap("INT") do
-	puts "Shutting down..."
+	puts "\nShutting down..."
 	exit
 end
 

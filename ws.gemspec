@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = "ws"
-	s.version = "0.3.0"
+	s.version = "0.4.0"
 	s.date = "2012-03-19"
 	s.description = "A simple web server for testing static websites."
 	s.summary = "Launches a simple static web server in the current directory."
